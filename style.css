@@ -17,18 +17,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 50px;
     background-color: #fdffff;
     color: #2f2235;
     font-family: "w95";
     font-size: large;
-}
-
-main {
-    width: 75dvw;
-    height: 85dvh;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
 }
 
 
@@ -48,12 +41,8 @@ main {
 }
 
 
-header {
-    display: flex;
-    width: 100%
-}
-
 nav {
+    margin-top: 25px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -63,7 +52,7 @@ nav {
 }
 
 
-nav button{
+nav button {
     margin: 20px;
     width: 125px;
     height: 30px;
@@ -72,66 +61,262 @@ nav button{
     font-size: large;
     border: 1px solid #2f2235;
     background-color: #fdffff;
+    gap: 8px;
+}
+
+.nav-icon {
+    display: none;
 }
 
 nav button:hover {
     border-style: dashed;
     background-color: #c3c3c3;
+    cursor: pointer;
 }
 
-nav button:active, .active-button{
+nav button:active,
+.active-button {
     background-color: #010081;
     border: 1px solid #010081;
     color: #fdffff;
 }
 
+body.nav-hidden {
+    justify-content: center;
+    /* Evita que el gap empuje el main cuando está maximizado */
+    gap: 0;
+}
+
+
+body.nav-hidden nav,
+body.nav-hidden footer {
+    display: none;
+}
+
+body.nav-hidden main {
+    width: 100dvw !important;
+    height: 100dvh !important;
+    max-height: none !important;
+    /* Libera el límite de 85dvh que lo frenaba */
+    border: none;
+    margin: 0;
+}
+
+main {
+    width: 50dvw;
+    height: 75dvh;
+    max-height: 85dvh;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #2f2235;
+    position: relative;
+    overflow: hidden;
+    transition: width 0.3s ease, margin 0.3s ease;
+}
+
+#maximize-button {
+    position: absolute;
+    align-self: self-end;
+    margin: 0;
+    width: 35px;
+    height: 35px;
+    color: #2f2235;
+    font-family: "w95";
+    border-top: none;
+    border-bottom: 1px solid #2f2235;
+    border-left: 1px solid #2f2235;
+    border-right: none;
+    background-color: #fdffff;
+}
+
+#maximize-button:hover {
+    border-top-style: none;
+    border-bottom-style: dashed;
+    border-left-style: dashed;
+    border-right-style: none;
+    background-color: #c3c3c3;
+    cursor: pointer;
+}
+
+#maximize-button:active,
+.active-button {
+    background-color: #010081;
+
+    border-top: none;
+    border-bottom: 1px solid #010081;
+    border-left: 1px solid #010081;
+    border-right: none;
+    color: #fdffff;
+}
 
 #main-content {
-    height: 100%;
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
-    border: 1px solid #2f2235;
-    overflow: scroll;
+    justify-content: flex-start;
+    overflow: hidden;
 }
 
-#main-content section
-{
+#main-content section {
     display: none;
-    
+    width: 100%;
+    height: 100%;
 }
 
-#main-content .active-section
-{
-    display: flex;
-    height: 100%;
-    width: 100%;
+#main-content .active-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
-}
-
-
-#home-section 
-{
+    justify-content: flex-start;
+    overflow-y: auto;
     height: 100%;
     width: 100%;
+    box-sizing: border-box;
+    padding: 20px 0 40px 0;
+}
+
+.content {
+    width: 100%;
+    height: auto;
+    /* Cambiado de 100% a auto para que crezca según su contenido sin forzar alturas extrañas */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
 }
 
-#home-section p {
-    margin: 20px;
-}
-
-#home-section h1 {
+.section-tittle {
     font-family: 'pixelta';
     font-style: italic;
     font-weight: 100;
     letter-spacing: 3px;
+}
+
+
+hr {
+    width: 100%;
+}
+
+.paragraph {
+    width: 100%;
+    padding: 0 25px;
+
+}
+
+.paragraph h2 {
+    font-size: 24px;
+    font-family: 'pixelta';
+    font-style: italic;
+    font-weight: 100;
+}
+
+#home-content,
+#about-content,
+#contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* Cambiado de center a flex-start */
+    width: 75%;
+}
+
+#contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact-method {
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact-method div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+}
+
+.content {
+    height: 100%;
+}
+
+/* Estilos por defecto para móviles */
+.mi-elemento {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+
+    /* 1. Reducimos el espacio vertical global del body en móviles */
+    html,
+    body {
+        gap: 15px;
+        padding: 10px;
+        flex-direction: column-reverse;
+    }
+
+    /* 2. El contenedor principal (main) abarca casi todo el ancho del celular */
+    main {
+        width: 95dvw;
+        height: 80dvh;
+        max-height: 85dvh;
+    }
+
+    /* 3. Ajustamos el menú de navegación para que los botones no se salgan o se amontonen */
+    nav {
+        flex-wrap: wrap;
+        /* Permite que los botones bajen si no caben en una sola línea */
+        gap: 5px;
+        padding: 5px;
+        margin-bottom: 20px;
+    }
+
+    nav button {
+        margin: 5px;
+        width: 90px;
+        /* Botones ligeramente más compactos en móvil */
+        height: 28px;
+        font-size: small;
+    }
+
+    /* 4. Adaptamos el formulario de contacto para que las columnas no se rompan */
+    #contact-method {
+        flex-direction: column;
+        /* Pasamos de fila a columna en móviles */
+        gap: 30px;
+    }
+
+    /* 5. Ajustamos los anchos de contenido interno para aprovechar mejor la pantalla móvil */
+    #home-content,
+    #about-content,
+    #contact-content {
+        width: 90%;
+    }
+
+    .nav-icon {
+        display: inline-block;
+    }
+
+    /* Ocultamos el texto del span */
+    .nav-text {
+        display: none;
+    }
+
+    /* Transformamos los botones rectangulares largos en botones cuadrados compactos */
+    nav button {
+        width: 50px !important;
+        height: 50px !important;
+        margin: 5px !important;
+        padding: 0;
+    }
+
 }

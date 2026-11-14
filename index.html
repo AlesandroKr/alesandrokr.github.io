@@ -1,7 +1,3 @@
-<!-- Think as you are a profesional dev -->
-
-<!-- Add style to * important words *  -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,43 +9,90 @@
 </head>
 
 <body>
+    <nav id="navegation">
+        <button id="home-button" class="active-button">
+            <!-- Icono Home -->
+            <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+            <span class="nav-text">Home</span>
+        </button>
+        <button id="about-button">
+            <!-- Icono Me / Usuario -->
+            <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+            </svg>
+            <span class="nav-text">Me</span>
+        </button>
+        <button id="contact-button">
+            <!-- Icono Contact / Mensaje -->
+            <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+            </svg>
+            <span class="nav-text">Contact</span>
+        </button>
+        <button id="blog-button">
+            <!-- Icono Blog / Libro o Documento -->
+            <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-0-5H20" />
+            </svg>
+            <span class="nav-text">Blog</span>
+        </button>
+        <button id="extras-button">
+            <!-- Icono Extras / Cuadrícula o Sparkles -->
+            <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2">
+                <rect width="7" height="7" x="3" y="3" rx="1" />
+                <rect width="7" height="7" x="14" y="3" rx="1" />
+                <rect width="7" height="7" x="14" y="14" rx="1" />
+                <rect width="7" height="7" x="3" y="14" rx="1" />
+            </svg>
+            <span class="nav-text">Extras</span>
+        </button>
+    </nav>
     <main>
-        <header>
-            <nav id="navegation">
-                <button id="home-button" class="active-button">Home</button>
-                <button id="about-button">Me</button>
-                <button id="contact-button">Contact</button>
-                <button id="extras-button">Extras</button>
-                <button id="blog-button">Blog</button>
-            </nav>
-        </header>
+        <button id="maximize-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 3V5H4V9H2V3H8ZM2 21V15H4V19H8V21H2ZM22 21H16V19H20V15H22V21ZM22 9H20V5H16V3H22V9Z">
+                </path>
+            </svg></button>
         <section id="main-content">
             <section id="home-section" class="active-section">
-                <h1> * WELCOME! *</h1>
-                <div id="home-content">
-                    <p>This is my personal website and probably you'll find it a bit different from others.</p>
-                    <p>My goal is show my personal tastes and my personalities and style in this website.</p>
-                    <p>Feel free to check my website, push buttons, write on inputs, whatever you want.</p>
-                    <hr>
-                    <div>
-                        <h3> Interesting to know about me</h3>
-                        <p>You'll find information about me in the <a href="">Me</a> section. A my interesting, my style
-                            of
-                            work, my personality and <strong>skill</strong></p>.
+                <h1 class="section-tittle "> * WELCOME! *</h1>
+                <div id="home-content" class="content">
+                    <div class=" paragraph">
+                        <p>This is my personal website and probably you'll find it a bit different from others. My goal
+                            is show my personal tastes and my personalities and style in this website.</p>
+                        <p>Feel free to check my website, push buttons, write on inputs, whatever you want.</p>
                     </div>
                     <hr>
-                    <div>
-                        <h3>Do you want to talk?...</h3>
+                    <div class="paragraph">
+                        <h2> Interesting to know about me</h2>
+                        <p>You'll find information about me in the <a href="">Me</a> section. A my interesting, my style
+                            of
+                            work, my personality and <strong>skill</strong>.</p>
+                    </div>
+                    <hr>
+                    <div class="paragraph">
+                        <h2>Do you want to talk?...</h2>
                         <p>Many ways to contact me you'll find in <a href="">contact</a> section.</p>
                         <p>I reminds you that I don't bite. Try with a simple 'Hello'.</p>
                     </div>
                     <hr>
-                    <h3>Visit my personal blog</h3>
-                    <p>I sometimes talk about something related with programming or a specific project. Clic on <a
-                            href="">Blogs</a>, it could be interesting for you.</p>
+                    <div class="paragraph">
+                        <h2>Visit my personal blog</h2>
+                        <p>I sometimes talk about something related with programming or a specific project. Clic on <a
+                                href="">Blogs</a>, it could be interesting for you.</p>
+                    </div>
                     <hr>
-                    <div>
-                        <h3>Things that I don't know how to name them</h3>
+                    <div class="paragraph">
+                        <h2>Things that I don't know how to name them</h2>
                         <p>I usually want to show things that probably are not related with programming or no . <a
                                 href="">Extras</a> sections is about that, random topics.</p>
                     </div>
@@ -57,33 +100,89 @@
             </section>
 
             <section id="about-section">
-                <h1> * ABOUT *</h1>
-                <div id="about-content">
-                    <p>Texto de prueba para la sección About. Aquí irá la información personal, intereses y detalles del
-                        proyecto.</p>
-                    <p>Segundo párrafo de relleno para verificar el espaciado vertical y la transición entre
-                        contenedores.</p>
+                <h1 class="section-tittle "> * ABOUT ME *</h1>
+                <div id="about-content" class="content">
+                    <div class="paragraph">
+                        <p>Mi primer encuentro con la programacion fue a los 14 años, cuando me padre me compró un libro
+                            de C#. Al inicio fue confuso y frustrante, el libro era interesante e intrigante, pero
+                            lastimosamente funcionaba para una version antigua del IDE (Visual Studio) y como cualquier
+                            principiante, no pude entender porqué no funcionaba. Lo dejé.</p>
+                    </div>
 
-                    <p>Tercer párrafo simulado para asegurar que el flujo del layout se mantenga consistente al cambiar
-                        de pestaña.</p>
+                    <div class="paragraph">
+                        <p>En un monento dado que no recuerdo, me comenzó a interesar el desarrollo de videojuegos.
+                            Empecé tomando unas clases de Unity, pero no llegó a nada. Desarrollar el codigo, los assets
+                            era mentalmente agobiante. Sentía que tenia que aprender todo, de la cual no me sentía
+                            preparado.</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Eventualmente, por frustracion, dejé la programacion. No fue hasta mis 17 que volví a
+                            experimentar denuevo con un inicio un tanto complejo: aprendiendo C++. Pero al ser
+                            autodidacta me era complicado encontrar una ruta de aprendizaje y no podía permitirme una
+                            clases online.</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>En ese momento descubrí el desarrollo web. Como cualquier persona dentro de este mundo, se
+                            empieza con Frontend. Mi viaje atravez de este sector fue neutra, ni tan desafiante, ni tan
+                            emocionante. Sabía que había algo que buscaba en la programacion que se asemejara a la forma
+                            en la que analizo las cosas: la logica.</p>
+                    </div>
+
+                    <div class="paragraph">
+                        <p>Entendí que mi mente busca patrones en los comportamientos, en el arte, en la forma de
+                            expresar y en las conexiones, había descubierto un sector dispuesto a exprimir cada neurona:
+                            el backend.</p>
+                    </div>
                 </div>
             </section>
 
             <section id="contact-section">
-                <h1> * CONTACT *</h1>
-                <div id="contact-content">
-                    <p>Texto de prueba para la sección Contact. Este bloque sirve para comprobar el renderizado de
-                        enlaces y formularios.</p>
-                    <p>Segundo párrafo de relleno destinado a medir márgenes internos y comportamiento responsivo en
-                        pantalla.</p>
-                    <p>Tercer párrafo simulado para validar que el cambio de estado oculte correctamente las secciones
-                        anteriores.</p>
+                <h1 class="section-tittle "> * CONTACT *</h1>
+                <div id="contact-content" class="content">
+                    <p>Aunque no esté tan conectado a la red, puedes ponerte en contacto conmigo de distintas formas.
+                    </p>
+                    <p>Aunque no te voy a mentir, mi forma favorita es por correo electrónico.</p>
+                    <div id="contact-method">
+                        <div>
+                            <a href="">Correo electronico</a>
+                            <a href="">Github</a>
+                            <a href="">Linkedin</a>
+
+                        </div>
+                        <div>
+                            <form action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST">
+                                <div class="form-group">
+                                    <label for="name">Nombre</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Correo electrónico</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subject">Asunto</label>
+                                    <input type="text" id="subject" name="subject" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message">Mensaje</label>
+                                    <textarea id="message" name="message" rows="5" required></textarea>
+                                </div>
+
+                                <button type="submit">Enviar</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <section id="blog-section">
-                <h1> * BLOG *</h1>
-                <div id="blog-content">
+                <h1 class="section-tittle "> * BLOG *</h1>
+                <div id="blog-content" class="content">
                     <p>Texto de prueba para la sección Blog. Aquí se mostrarán las entradas, notas técnicas y
                         actualizaciones.</p>
                     <p>Segundo párrafo de relleno para observar cómo se comporta la tipografía con bloques de texto más
@@ -93,8 +192,8 @@
             </section>
 
             <section id="extras-section">
-                <h1> * EXTRAS *</h1>
-                <div id="extras-content">
+                <h1 class="section-tittle "> * EXTRAS *</h1>
+                <div id="extras-content" class="content">
                     <p>Texto de prueba para la sección Extras. Ideal para testear experimentos visuales, widgets o
                         recursos adicionales.</p>
                     <p>Segundo párrafo de relleno para confirmar que los estilos CSS aplican de forma uniforme en este
@@ -108,7 +207,7 @@
         </section>
     </main>
     <footer>
-        <p>I hope you enjoy my website</p>
+        <p>I hope you enjoy my website.</p>
     </footer>
 
     <script src="app.js"></script>
