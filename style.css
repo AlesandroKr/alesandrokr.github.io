@@ -93,6 +93,7 @@ nav button {
     justify-content: center;
     gap: 8px;
     cursor: pointer;
+    user-select: none;
 }
 
 .nav-icon {
@@ -336,11 +337,11 @@ body.nav-hidden main {
 
 /* Explorador Lateral */
 .file-explorer {
-    width: 35%;
     background-color: #f4f6f6;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     border-top: 1px solid #2f2235;
+    border-bottom: 1px solid #2f2235;
 }
 
 .explorer-header {
@@ -357,18 +358,21 @@ body.nav-hidden main {
     justify-content: space-between;
     align-items: center;
 }
-.explorer-header > * {
-    pointer-events: none; /* Hace que el SVG o texto no interfieran con el clic del contenedor */
+
+.explorer-header>* {
+    pointer-events: none;
+    /* Hace que el SVG o texto no interfieran con el clic del contenedor */
 }
 
-.explorer-header .icon{
+.explorer-header .icon {
     width: fit-content;
     box-sizing: border-box;
     height: 25px;
     width: 25px;
     flex-shrink: 0;
 }
-.category.collapsed .explorer-header .icon{
+
+.category.collapsed .explorer-header .icon {
     transform: rotate(180deg);
 }
 
@@ -392,6 +396,43 @@ body.nav-hidden main {
     width: 85%;
 }
 
+#categories-container {
+    min-width: 350px;
+    height: 100%;
+}
+
+#categories-container.hidden {
+    display: none !important;
+}
+
+
+#open-explorer-btn {
+    width: 25px;
+    height: 100%;
+    border: none;
+    border-left: 1px solid #2f2235;
+    cursor: pointer;
+    background-color: #f4f6f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#open-explorer-btn.active-button .open-explorer-btn-icon {
+    transform: rotate(180deg);
+}
+
+#open-explorer-btn:hover {
+    background-color: #c3c3c3;
+}
+
+#open-explorer-btn.active-button {
+    background-color: #010081;
+    border: none;
+    color: #fdffff;
+}
+
 .category.collapsed .file-list {
     max-height: 0;
     display: none;
@@ -400,7 +441,7 @@ body.nav-hidden main {
 .file-item {
     width: 100%;
     position: relative;
-    
+
     padding: 8px 15px;
     cursor: pointer;
     font-size: 0.95rem;
@@ -417,10 +458,13 @@ body.nav-hidden main {
 
 /* Visor de Notas (Derecha) */
 .note-viewer {
+    width: 100%;
     flex: 1;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    border-left: 1px solid #2f2235;
+    border-top: 1px solid #2f2235;
 }
 
 .note-header {
@@ -435,6 +479,7 @@ body.nav-hidden main {
     padding: 30px;
     overflow-y: auto;
     flex: 1;
+
 }
 
 /* Ocultar notas inactivas */

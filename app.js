@@ -94,4 +94,21 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    let pressed = false;
+    const openExplorerButton = document.getElementById("open-explorer-btn");
+    const categoriesContainer = document.getElementById("categories-container");
+
+    openExplorerButton.addEventListener("click", () => {
+        pressed = !pressed;
+
+        categoriesContainer.classList.toggle("hidden", pressed);
+        if (pressed) {
+            openExplorerButton.classList.add("active-button");
+        }
+        else {
+            openExplorerButton.classList.remove("active-button");
+        }
+    });
+
 });
+

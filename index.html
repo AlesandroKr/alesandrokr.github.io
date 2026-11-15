@@ -179,60 +179,77 @@
                     </div>
                 </div>
             </section>
-
             <section id="blog-section">
-                <h1 class="section-tittle "> * BLOG *</h1>
+                <h1 class="section-tittle">BLOG *</h1>
                 <div id="blog-content" class="content">
                     <div class="explorer-container">
                         <!-- Panel Lateral Izquierdo: Explorador de Notas -->
                         <aside class="file-explorer">
-                            <div class="category">
-                                <div class="explorer-header">
-                                    <p>my-notes-1</p>
-                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                        fill="currentColor">
-                                        <path d="M12 8L18 14H6L12 8Z"></path>
-                                    </svg>
+                            <div id="categories-container">
+                                <div class="category">
+                                    <div class="explorer-header">
+                                        <p>my-notes-1</p>
+                                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            fill="currentColor">
+                                            <path d="M12 8L18 14H6L12 8Z"></path>
+                                        </svg>
+                                    </div>
+                                    <ul class="file-list">
+                                        <li class="file-item" data-target="post-1">sobre-mi.md</li>
+                                        <li class="file-item" data-target="post-2">css-frustraciones.md</li>
+                                        <li class="file-item" data-target="post-3">ideas-juegos.md</li>
+                                    </ul>
                                 </div>
 
-                                <ul class="file-list">
-                                    <li class="file-item" data-target="post-1">sobre-mi.md</li>
-                                    <li class="file-item" data-target="post-2">css-frustraciones.md</li>
-                                    <li class="file-item" data-target="post-3">ideas-juegos.md</li>
-                                </ul>
-                            </div>
-                            <div class="category">
-                                <div class="explorer-header">
-                                    <p>my-notes-1</p>
-                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                        fill="currentColor">
-                                        <path d="M12 8L18 14H6L12 8Z"></path>
-                                    </svg>
+                                <div class="category">
+                                    <div class="explorer-header">
+                                        <p>my-notes-2</p>
+                                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            fill="currentColor">
+                                            <path d="M12 8L18 14H6L12 8Z"></path>
+                                        </svg>
+                                    </div>
+                                    <ul class="file-list">
+                                        <li class="file-item" data-target="post-1">sobre-mi.md</li>
+                                        <li class="file-item" data-target="post-2">css-frustraciones.md</li>
+                                        <li class="file-item" data-target="post-3">ideas-juegos.md</li>
+                                    </ul>
                                 </div>
-                                <ul class="file-list">
-                                    <li class="file-item" data-target="post-1">sobre-mi.md</li>
-                                    <li class="file-item" data-target="post-2">css-frustraciones.md</li>
-                                    <li class="file-item" data-target="post-3">ideas-juegos.md</li>
-                                </ul>
-                            </div>
-                            <div class="category">
-                                <div class="explorer-header">
-                                    <p>my-notes-1</p>
-                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                        fill="currentColor">
-                                        <path d="M12 8L18 14H6L12 8Z"></path>
-                                    </svg>
+
+                                <div class="category">
+                                    <div class="explorer-header">
+                                        <p>my-notes-3</p>
+                                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            fill="currentColor">
+                                            <path d="M12 8L18 14H6L12 8Z"></path>
+                                        </svg>
+                                    </div>
+                                    <ul class="file-list">
+                                        <li class="file-item" data-target="post-1">sobre-mi.md</li>
+                                        <li class="file-item" data-target="post-2">css-frustraciones.md</li>
+                                        <li class="file-item" data-target="post-3">ideas-juegos.md</li>
+                                    </ul>
                                 </div>
-                                <ul class="file-list">
-                                    <li class="file-item" data-target="post-1">sobre-mi.md</li>
-                                    <li class="file-item" data-target="post-2">css-frustraciones.md</li>
-                                    <li class="file-item" data-target="post-3">ideas-juegos.md</li>
-                                </ul>
                             </div>
+
+                            <button id="open-explorer-btn">
+                                <svg class="open-explorer-btn-icon" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M4.83582 12L11.0429 18.2071L12.4571 16.7929L7.66424 12L12.4571 7.20712L11.0429 5.79291L4.83582 12ZM10.4857 12L16.6928 18.2071L18.107 16.7929L13.3141 12L18.107 7.20712L16.6928 5.79291L10.4857 12Z">
+                                    </path>
+                                </svg>
+                                <svg class="open-explorer-btn-icon" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M4.83582 12L11.0429 18.2071L12.4571 16.7929L7.66424 12L12.4571 7.20712L11.0429 5.79291L4.83582 12ZM10.4857 12L16.6928 18.2071L18.107 16.7929L13.3141 12L18.107 7.20712L16.6928 5.79291L10.4857 12Z">
+                                    </path>
+                                </svg>
+                            </button>
                         </aside>
 
                         <!-- Panel Derecho: Contenido de la nota -->
-                        <main class="note-viewer">
+                        <div class="note-viewer">
                             <div class="note-header">
                                 <span id="current-file-name">sobre-mi.md</span>
                             </div>
@@ -246,7 +263,7 @@
                                     <p>Por qué CSS hace lo que quiere...</p>
                                 </article>
                             </div>
-                        </main>
+                        </div>
                     </div>
                 </div>
             </section>
