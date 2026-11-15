@@ -1,3 +1,6 @@
+/* ==========================================
+   1. CONFIGURACIÓN DE FUENTES Y BASE
+   ========================================== */
 @font-face {
     font-family: "w95";
     src: url(fonts/w95f.woff);
@@ -8,23 +11,45 @@
     src: url(fonts/Pixelta.ttf);
 }
 
+html {
+    width: 100%;
+    height: 100%;
+}
+
 html,
 body {
-    height: 100%;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 40px;
     background-color: #fdffff;
     color: #2f2235;
     font-family: "w95";
     font-size: large;
+    box-sizing: border-box;
 }
 
+body {
+    width: 75%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centra a sus hijos (nav y main) */
+}
 
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* Selección de texto */
 *::selection {
     background: #010081;
     color: #ffffff;
@@ -41,37 +66,43 @@ body {
 }
 
 
+/* ==========================================
+   2. NAVEGACIÓN (NAV)
+   ========================================== */
 nav {
-    margin-top: 25px;
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     border: 1px solid #2f2235;
+    background-color: #fdffff;
 }
 
-
 nav button {
-    margin: 20px;
-    width: 125px;
+    margin: 15px;
+    width: 120px;
     height: 30px;
     color: #2f2235;
     font-family: "w95";
     font-size: large;
     border: 1px solid #2f2235;
     background-color: #fdffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 8px;
+    cursor: pointer;
 }
 
 .nav-icon {
     display: none;
+    /* Oculto en PC por defecto */
 }
 
 nav button:hover {
     border-style: dashed;
     background-color: #c3c3c3;
-    cursor: pointer;
 }
 
 nav button:active,
@@ -81,29 +112,13 @@ nav button:active,
     color: #fdffff;
 }
 
-body.nav-hidden {
-    justify-content: center;
-    /* Evita que el gap empuje el main cuando está maximizado */
-    gap: 0;
-}
 
-
-body.nav-hidden nav,
-body.nav-hidden footer {
-    display: none;
-}
-
-body.nav-hidden main {
-    width: 100dvw !important;
-    height: 100dvh !important;
-    max-height: none !important;
-    /* Libera el límite de 85dvh que lo frenaba */
-    border: none;
-    margin: 0;
-}
+/* ==========================================
+   3. CONTENEDOR PRINCIPAL (MAIN Y VENTANA)
+   ========================================== */
 
 main {
-    width: 50dvw;
+    width: 100%;
     height: 75dvh;
     max-height: 85dvh;
     display: flex;
@@ -111,13 +126,16 @@ main {
     border: 1px solid #2f2235;
     position: relative;
     overflow: hidden;
-    transition: width 0.3s ease, margin 0.3s ease;
+    background-color: #fdffff;
+    transition: width 0.3s ease, height 0.3s ease;
 }
 
+/* Botón de Maximizar */
 #maximize-button {
     position: absolute;
-    align-self: self-end;
-    margin: 0;
+    top: 0;
+    right: 0;
+    z-index: 10;
     width: 35px;
     height: 35px;
     color: #2f2235;
@@ -127,28 +145,19 @@ main {
     border-left: 1px solid #2f2235;
     border-right: none;
     background-color: #fdffff;
-}
-
-#maximize-button:hover {
-    border-top-style: none;
-    border-bottom-style: dashed;
-    border-left-style: dashed;
-    border-right-style: none;
-    background-color: #c3c3c3;
     cursor: pointer;
 }
 
-#maximize-button:active,
-.active-button {
-    background-color: #010081;
-
-    border-top: none;
-    border-bottom: 1px solid #010081;
-    border-left: 1px solid #010081;
-    border-right: none;
-    color: #fdffff;
+#maximize-button:hover {
+    border-bottom-style: dashed;
+    border-left-style: dashed;
+    background-color: #c3c3c3;
 }
 
+
+/* ==========================================
+   4. SECCIONES Y CONTENIDOS INTERNOS
+   ========================================== */
 #main-content {
     width: 100%;
     height: 100%;
@@ -173,17 +182,7 @@ main {
     overflow-y: auto;
     height: 100%;
     width: 100%;
-    box-sizing: border-box;
     padding: 20px 0 40px 0;
-}
-
-.content {
-    width: 100%;
-    height: auto;
-    /* Cambiado de 100% a auto para que crezca según su contenido sin forzar alturas extrañas */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .section-tittle {
@@ -193,15 +192,24 @@ main {
     letter-spacing: 3px;
 }
 
+.content {
+    width: 85%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 hr {
     width: 100%;
+    border: 0;
+    border-top: 1px solid #2f2235;
+    margin: 20px 0;
 }
 
 .paragraph {
     width: 100%;
-    padding: 0 25px;
-
+    padding: 0 10px;
 }
 
 .paragraph h2 {
@@ -211,17 +219,7 @@ hr {
     font-weight: 100;
 }
 
-#home-content,
-#about-content,
-#contact-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    /* Cambiado de center a flex-start */
-    width: 75%;
-}
-
+/* Sección de Contacto específica */
 #contact-section {
     display: flex;
     justify-content: center;
@@ -231,9 +229,10 @@ hr {
 #contact-method {
     display: flex;
     flex-direction: row;
-    gap: 150px;
+    gap: 80px;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 #contact-method div {
@@ -242,81 +241,207 @@ hr {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 35px;
+    gap: 20px;
 }
 
-.content {
-    height: 100%;
+
+/* ==========================================
+   5. ESTADOS ESPECIALES (MODO MAXIMIZADO)
+   ========================================== */
+body.nav-hidden {
+    justify-content: center;
+    gap: 0;
 }
 
-/* Estilos por defecto para móviles */
-.mi-elemento {
-    width: 100%;
+body.nav-hidden nav,
+body.nav-hidden footer {
+    display: none;
 }
 
+body.nav-hidden main {
+    width: 100dvw !important;
+    height: 100dvh !important;
+    max-width: none !important;
+    max-height: none !important;
+    border: none;
+    margin: 0;
+}
+
+
+/* ==========================================
+   6. RESPONSIVE / MODO CELULAR (Media Query)
+   ========================================== */
 @media (max-width: 768px) {
 
-    /* 1. Reducimos el espacio vertical global del body en móviles */
     html,
     body {
         gap: 15px;
         padding: 10px;
         flex-direction: column-reverse;
+        /* Pone el nav abajo o arriba según prefieras */
     }
 
-    /* 2. El contenedor principal (main) abarca casi todo el ancho del celular */
+    /* Ancho casi total para celulares */
+    nav,
     main {
         width: 95dvw;
-        height: 80dvh;
-        max-height: 85dvh;
     }
 
-    /* 3. Ajustamos el menú de navegación para que los botones no se salgan o se amontonen */
+    main {
+        height: 75dvh;
+    }
+
     nav {
         flex-wrap: wrap;
-        /* Permite que los botones bajen si no caben en una sola línea */
         gap: 5px;
         padding: 5px;
-        margin-bottom: 20px;
     }
 
     nav button {
-        margin: 5px;
-        width: 90px;
-        /* Botones ligeramente más compactos en móvil */
-        height: 28px;
-        font-size: small;
-    }
-
-    /* 4. Adaptamos el formulario de contacto para que las columnas no se rompan */
-    #contact-method {
-        flex-direction: column;
-        /* Pasamos de fila a columna en móviles */
-        gap: 30px;
-    }
-
-    /* 5. Ajustamos los anchos de contenido interno para aprovechar mejor la pantalla móvil */
-    #home-content,
-    #about-content,
-    #contact-content {
-        width: 90%;
+        width: 45px !important;
+        height: 45px !important;
+        margin: 4px !important;
+        padding: 0;
     }
 
     .nav-icon {
         display: inline-block;
     }
 
-    /* Ocultamos el texto del span */
     .nav-text {
         display: none;
     }
 
-    /* Transformamos los botones rectangulares largos en botones cuadrados compactos */
-    nav button {
-        width: 50px !important;
-        height: 50px !important;
-        margin: 5px !important;
-        padding: 0;
+    #contact-method {
+        flex-direction: column;
+        gap: 30px;
     }
 
+    .content {
+        width: 90%;
+    }
+}
+
+#blog-content {
+    width: 100%;
+    height: 100%;
+}
+
+
+.explorer-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+/* Explorador Lateral */
+.file-explorer {
+    width: 35%;
+    background-color: #f4f6f6;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #2f2235;
+}
+
+.explorer-header {
+    width: 100%;
+    height: 35px;
+    padding: 10px 15px;
+    font-weight: bold;
+    border-bottom: 1px solid #2f2235;
+    font-size: 0.9rem;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.explorer-header > * {
+    pointer-events: none; /* Hace que el SVG o texto no interfieran con el clic del contenedor */
+}
+
+.explorer-header .icon{
+    width: fit-content;
+    box-sizing: border-box;
+    height: 25px;
+    width: 25px;
+    flex-shrink: 0;
+}
+.category.collapsed .explorer-header .icon{
+    transform: rotate(180deg);
+}
+
+.explorer-header:hover {
+    background-color: #c3c3c3;
+}
+
+.explorer-header.active {
+    background-color: #010081;
+    color: #ffffff;
+}
+
+.file-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-end;
+    width: 85%;
+}
+
+.category.collapsed .file-list {
+    max-height: 0;
+    display: none;
+}
+
+.file-item {
+    width: 100%;
+    position: relative;
+    
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.file-item:hover {
+    background-color: #c3c3c3;
+}
+
+.file-item.active {
+    background-color: #010081;
+    color: #ffffff;
+}
+
+/* Visor de Notas (Derecha) */
+.note-viewer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.note-header {
+    padding: 10px 20px;
+    border-bottom: 1px solid #2f2235;
+    font-size: 0.85rem;
+    opacity: 0.7;
+    background-color: #fafbfc;
+}
+
+.note-body {
+    padding: 30px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Ocultar notas inactivas */
+.markdown-note {
+    display: none;
+}
+
+.markdown-note.active-note {
+    display: block;
 }
